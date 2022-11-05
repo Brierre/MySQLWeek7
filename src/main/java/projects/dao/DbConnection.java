@@ -17,11 +17,12 @@ public class DbConnection {
 	public static Connection getConnection() {
 		//jdbc:mysql://host:port/schema user string, pw string, do not use SSL
 		String uri = String.format("jdbc:mysql://%s:%d/%s?user=%s&password=%s&useSSL=false", HOST, PORT, SCHEMA, USER, PASSWORD);
-		System.out.println("Connecting with uri=" + uri);
+		//System.out.println("Connecting with uri=" + uri);
+		System.out.println("Connecting...");
 		
 		try {
 			Connection conn = DriverManager.getConnection(uri);
-			System.out.println("Connection is successful!");
+			System.out.println("Connection to schema '" + SCHEMA + "' is successful!");
 			return conn;
 			
 		} catch (SQLException e) {
